@@ -1,5 +1,10 @@
 import { Request, Response } from 'express';
+import { Category } from '../../app/models/Category';
 
 export async function createCategory(req: Request, res: Response) {
-  res.send('OK POST CREATE CATEGORY');
+  const { icon, name } = req.body;
+
+  const category =  await Category.create({ icon, name });
+
+  res.json(category);
 }
