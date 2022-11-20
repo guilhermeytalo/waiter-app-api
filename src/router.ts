@@ -3,8 +3,15 @@ import {createCategory} from './useCases/categories/createCategory';
 import {listCategories} from './useCases/categories/listCategories';
 import {listProducts} from './useCases/products/listProducts';
 import {createProduct} from './useCases/products/createProduct';
+import multer from 'multer';
 
 export const router = Router();
+
+const upload = multer.diskStorage({
+  destination(req, file, callback) {
+    callback(null, '');
+  }
+});
 
 // List categories
 router.get('/categories', listCategories);
