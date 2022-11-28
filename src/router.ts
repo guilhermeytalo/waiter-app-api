@@ -1,4 +1,4 @@
-import path from 'node:path'
+import path from 'node:path';
 import { Router } from 'express';
 import { createCategory } from './useCases/categories/createCategory';
 import { listCategories } from './useCases/categories/listCategories';
